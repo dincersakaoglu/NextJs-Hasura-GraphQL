@@ -1,0 +1,44 @@
+.human-drawing {
+  position: relative;
+  width: 100px;
+  height: 200px;
+}
+
+.head {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.body {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 100px;
+  background-color: #333;
+}
+
+.arm-left,
+.arm-right {
+  position: absolute;
+  width: 5px;
+  background-color: #333;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: height 0.2s ease-in-out;
+}
+
+.arm-left {
+  top: 50px;
+}
+
+.arm-right {
+  top: 150px;
+}
