@@ -3,7 +3,7 @@ import Head from "next/head";
 import { getAllEvents, getFeaturedEvents } from "../helpers/api-util";
 import EventList from "../components/events/event-list";
 import NewsletterRegistration from "../components/input/newsletter-registration";
-import HumanDrawing from "../components/ui/HumanDrawing";
+
 
 function HomePage(props) {
   // const featuredEvents = getFeaturedEvents();
@@ -22,7 +22,7 @@ function HomePage(props) {
       </Head>
       <NewsletterRegistration />
       <EventList items={props.featuredEvents} />
-      <HumanDrawing></HumanDrawing>
+    
     </div>
   );
 }
