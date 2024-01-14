@@ -1,0 +1,20 @@
+services:
+  postgres:
+      image: postgres:latest
+      container_name: postgre-db
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: dangercodex
+        POSTGRES_DB: hasura-db
+      ports:
+       - "5434:5432"
+  hasura:
+    image: hasura/graphql-engine:latest
+    container_name: hasura-engine
+    depends_on:
+      - postgres
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:dangercodex@host.docker.internal:5434/hasura-db
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" 
+    ports:
+      - "8080:8080" 
